@@ -328,7 +328,15 @@
       document.body.clientWidth; 
     </script>
   </div>
-     <audio id="myAudio" src="ss.mp3" loop autoplay></audio>
+    <audio id="myAudio" src="ss.mp3" loop autoplay></audio>
+
+  <script>
+      const audio = document.getElementById('myAudio');
+      audio.muted = false; // Pastikan tidak mute
+      audio.play().catch((error) => {
+          console.log("Autoplay diblokir: " + error);
+      });
+  </script>
   <canvas id="pinkboard" style="opacity: 0.1;"></canvas>
   <script src="pink heart.js"></script>
   <script src="function-heart.js"></script>
