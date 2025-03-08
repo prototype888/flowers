@@ -328,24 +328,16 @@
       document.body.clientWidth; 
     </script>
   </div>
-   <audio id="myAudio" src="ss.mp3" loop></audio>
+     <audio id="myAudio" src="ss.mp3" loop autoplay></audio>
+  <script>
+    document.body.addEventListener('click', () => {
+        const audio = document.getElementById('myAudio');
+        audio.play();
+    });
+  </script>
   <canvas id="pinkboard" style="opacity: 0.1;"></canvas>
   <script src="pink heart.js"></script>
   <script src="function-heart.js"></script>
-      <script>
-        window.onload = () => {
-            const audio = document.getElementById('myAudio');
-            
-            // Coba play audio
-            audio.play()
-                .then(() => {
-                    console.log("Audio diputar otomatis!");
-                })
-                .catch((e) => {
-                    console.log("Autoplay diblokir oleh browser. Silakan klik halaman untuk mulai audio.", e);
-                });
-        };
-    </script>
 </body>
 
 </html>
